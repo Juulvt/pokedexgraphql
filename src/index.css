@@ -1,13 +1,148 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* badge styles */
+bg-normal {
+    background-color: #A8A878;
+  }
+  
+  bg-fighting {
+    background-color: #C03028;
+  }
+  
+  bg-flying {
+    background-color: #A890F0;
+  }
+  
+  bg-poison {
+    background-color: #A040A0;
+  }
+  
+  bg-ground {
+    background-color: #E0C068;
+  }
+  
+  bg-rock {
+    background-color: #B8A038;
+  }
+  
+  bg-bug {
+    background-color: #A8B820;
+  }
+  
+  bg-ghost {
+    background-color: #705898;
+  }
+  
+  bg-steel {
+    background-color: #B8B8D0;
+  }
+  
+  bg-fire {
+    background-color: #F08030;
+  }
+  
+  bg-water {
+    background-color: #5160AD;
+  }
+  
+  bg-grass {
+    background-color: #51AD7C;
+  }
+  
+  bg-electric {
+    background-color: #DDBE3F;
+  }
+  
+  bg-psychic {
+    background-color: #F85888;
+  }
+  
+  bg-ice {
+    background-color: #98D8D8;
+  }
+  
+  bg-dragon {
+    background-color: #7038F8;
+  }
+  
+  bg-dark {
+    background-color: #705848;
+  }
+  
+  bg-fairy {
+    background-color: #EE99AC;
+  }
+  
+  .border-normal {
+    border: 1px solid #A8A878;
+  }
+  
+  .border-fighting {
+    border: 1px solid #C03028;
+  }
+  
+  .border-flying {
+    border: 1px solid #A890F0;
+  }
+  
+  .border-poison {
+    border: 1px solid #A040A0;
+  }
+  
+  .border-ground {
+    border: 1px solid #E0C068;
+  }
+  
+  .border-rock {
+    border: 1px solid #B8A038;
+  }
+  
+  .border-bug {
+    border: 1px solid #A8B820;
+  }
+  
+  .border-ghost {
+    border: 1px solid #705898;
+  }
+  
+  .border-steel {
+    border: 1px solid #B8B8D0;
+  }
+  
+  .border-fire {
+    border: 1px solid #F08030;
+  }
+  
+  .border-water {
+    border: 1px solid #5160AD;
+  }
+  
+  .border-grass {
+    border: 1px solid #51AD7C;
+  }
+  
+  .border-electric {
+    border: 1px solid #DDBE3F;
+  }
+  
+  .border-psychic {
+    border: 1px solid #F85888;
+  }
+  
+  .border-ice {
+    border: 1px solid #98D8D8;
+  }
+  
+  .border-dragon {
+    border: 1px solid #7038F8;
+  }
+  
+  .border-dark {
+    border: 1px solid #705848;
+  }
+  
+  .border-fairy {
+    border: 1px solid #EE99AC;
+  }
