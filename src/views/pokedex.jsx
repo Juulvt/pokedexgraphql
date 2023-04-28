@@ -2,10 +2,15 @@ import React from 'react';
 import Cards from '../components/Groups/Cards'
 import { useState, useEffect } from 'react'
 import { useQuery, gql } from '@apollo/client';
+import { useLocation } from "react-router-dom";
+import Pagination from '../components/Utilities/Pagination';
 
+
+const itemsPerPage = 20;
 const POKEMON_QUERY = gql`
-  query Pokemon {
-    pokemon_v2_pokemon {
+  query Pokemon
+  {
+    pokemon:pokemon_v2_pokemon {
     id
     name
     pokemon_v2_pokemontypes {
@@ -17,13 +22,19 @@ const POKEMON_QUERY = gql`
   }`;
 
 const Pokedex = () => {
-  const { loading, error, data } = useQuery(POKEMON_QUERY);
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const page = queryParams.get('page') != undefined ? parseInt(queryParams.get('page'),10):1;
+  const { loading, error, data } = useQuery(POKEMON_QUERY, {
+    variables: { offset:0, limit:itemsPerPage },
+  });
   const [ ready, setReady ] = useState(false);
   const [ pokemon, setPokemon ] = useState();
 
   useEffect(() => {
       if(loading === false && data){
-          setPokemon(data.pokemon_v2_pokemon);
+        console.log(data);
+          setPokemon(data.pokemon);
           setReady(true);
       }
   }, [loading, data]);
@@ -39,7 +50,8 @@ const Pokedex = () => {
   </div>);
   if (error) return <pre>{error.message}</pre>;
   return (<div className="w-full h-fit container mx-auto my-8" id="pokedex">
-        <Cards key={'cards'} pokemonList={pokemon}/>
+        <Cards key={'cards'} limit={page * itemsPerPage} offset={(itemsPerPage * (page - 1))} pokemonList={pokemon}/>
+        <Pagination key={'pagination'} limit={page * itemsPerPage} offset={(itemsPerPage * (page - 1))} page={page} total={pokemon.length}/>
     </div>);
   };
   
